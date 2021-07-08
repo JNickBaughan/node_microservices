@@ -1,0 +1,7 @@
+{
+  "scripts": {
+    "start-client": "npm start --prefix client",
+    "start-posts": "npm start --prefix posts",
+    "start-comments": "npm start --prefix comments"
+  }
+}
