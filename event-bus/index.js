@@ -8,6 +8,7 @@ app.use(bodyParser.json());
 const services = [
   "http://localhost:4000", //posts
   "http://localhost:4001", //comments
+  "http://localhost:4002", //query
 ];
 
 app.post("/events", (req, res) => {
