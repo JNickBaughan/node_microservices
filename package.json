@@ -2,6 +2,8 @@
   "scripts": {
     "start-client": "npm start --prefix client",
     "start-posts": "npm start --prefix posts",
-    "start-comments": "npm start --prefix comments"
+    "start-comments": "npm start --prefix comments",
+    "start-bus": "npm start --prefix event-bus",
+    "start-all": "npm run start-bus && npm run start-comments && npm run start-posts"
   }
 }
