@@ -1,10 +1,13 @@
 {
   "scripts": {
     "start-client": "npm start --prefix client",
-    "start-posts": "npm start --prefix posts",
-    "start-comments": "npm start --prefix comments",
-    "start-bus": "npm start --prefix event-bus",
-    "start-query": "npm start --prefix query-posts",
-    "start-all": "npm run start-bus && npm run start-comments && npm run start-posts"
+    "start-posts": "npm dev --prefix posts",
+    "start-comments": "npm dev --prefix comments",
+    "start-bus": "npm dev --prefix event-bus",
+    "start-query": "npm dev --prefix query-posts",
+    "start-all": "concurrently --kill-others \"npm run start-query\" \"npm run start-bus\" \"npm run start-comments\" \"npm run start-posts\""
+  },
+  "devDependencies": {
+    "concurrently": "^6.2.0"
   }
 }

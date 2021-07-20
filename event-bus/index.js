@@ -6,7 +6,7 @@ const { getServiceUrls } = require("../constants");
 const app = express();
 app.use(bodyParser.json());
 
-const services = Object.values(getServiceUrls());
+const services = Object.values(getServiceUrls(process.env.NODE_ENV));
 
 app.post("/events", (req, res) => {
   const event = req.body;

@@ -3,7 +3,7 @@ const bodyParser = require("body-parser");
 const axios = require("axios");
 const cors = require("cors");
 const { getEventBusUrl } = require("../constants");
-const eventBusUrl = getEventBusUrl();
+const eventBusUrl = getEventBusUrl(process.env.NODE_ENV);
 
 const app = express();
 const middlewares = [bodyParser.json(), cors()];
