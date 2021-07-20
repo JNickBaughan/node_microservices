@@ -2,6 +2,8 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const axios = require("axios");
 const cors = require("cors");
+const { getEventBusUrl } = require("../constants");
+const eventBusUrl = getEventBusUrl();
 
 const app = express();
 const middlewares = [bodyParser.json(), cors()];
@@ -19,7 +21,7 @@ app.post("/posts", (req, res) => {
   const { title } = req.body;
   posts = [...posts, { title, id }];
 
-  axios.post("http://localhost:5000/events", {
+  axios.post(`${eventBusUrl}/events`, {
     type: "PostCreated",
     event: {
       id,

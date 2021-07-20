@@ -5,4 +5,6 @@ const getServiceUrls = () => ({
   query: "http://localhost:4002",
 });
 
-module.exports = getServiceUrls;
+const getEventBusUrl = () => "http://localhost:5000";
+
+module.exports = { getServiceUrls, getEventBusUrl };
