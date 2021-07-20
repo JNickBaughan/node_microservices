@@ -1,15 +1,12 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const axios = require("axios");
+const getServiceUrls = require("../constants");
 
 const app = express();
 app.use(bodyParser.json());
 
-const services = [
-  "http://localhost:4000", //posts
-  "http://localhost:4001", //comments
-  "http://localhost:4002", //query
-];
+const services = Object.values(getServiceUrls());
 
 app.post("/events", (req, res) => {
   const event = req.body;
@@ -17,6 +14,10 @@ app.post("/events", (req, res) => {
     axios.post(`${service}/events`, event);
   });
   res.status(200).send({ status: "OK" });
+});
+
+app.get("/", () => {
+  console.dir(services);
 });
 
 app.listen(5000, () => {
