@@ -22,7 +22,7 @@ gives access to running pods within our cluster. If pod A wants to make a call t
 
 ---
 
-## Type of kubernetes Service this is a test
+## Type of kubernetes Service
 
 ### Cluster IP
 
