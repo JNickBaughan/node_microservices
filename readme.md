@@ -19,3 +19,19 @@ is in charge running correct number of pods and making sure they’re available.
 ### Service
 
 gives access to running pods within our cluster. If pod A wants to make a call to pod B it makes a call to the service and the service acts as a proxy. Provides an easy to remember URL to access a running container.
+
+---
+
+## Type of kubernetes Service
+
+### Cluster IP
+
+-> setsup easy to remember url to access a pod. Only exposes pod IN THE CLUSTER.
+
+### Node Port
+
+-> makes a pod accessible from out the cluster, usually only for dev
+
+### Load Balancer
+
+-> makes a pod accessible from outside the cluster. This is the right way to expose a pod to the outside world.
